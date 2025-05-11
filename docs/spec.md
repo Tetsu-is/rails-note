@@ -41,12 +41,12 @@
   - モデリング
     | テーブル名 | カラム名 | 型 | 制約 |
     |-----------|------------|----------|----------|
-    | Memo | id | integer | PK |
+    | Note | id | integer | PK |
     | | title | string | |
     | | body | text | |
     | | create_at | datetime | |
     | | update_at | datetime | |
-
-考慮事項
-
-- ノート新規作成用画面が必要になるかもしれない。見た目上はノート画面とほとんど変わらないが、システムとして区別したいケースがありうる
+    | User | id | integer | PK |
+    | | name | string | |
+    | | password | string | |
+    | | create_at | datetime | |

@@ -13,3 +13,9 @@ Note.create!([
   { title: 'Railsメモ', body: 'Railsでアプリを作るときのメモを書きましょう。' },
   { title: 'やることリスト', body: "・牛乳を買う\n・メールを返信する\n・運動する" }
 ])
+
+User.create!(
+  name: 'testuser',
+  password: 'password',
+  password_confirmation: 'password'
+)

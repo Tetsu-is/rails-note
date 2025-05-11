@@ -1,38 +1,29 @@
+<%# New note form %>
 <div class="container-fluid py-5" style="max-width: 1000px;">
   <div class="row justify-content-center">
     <div class="col-12">
       <% if flash[:alert] %>
         <div class="alert alert-danger alert-dismissible fade show rounded-3" role="alert">
-          <%= flash[:alert]
- %>
+          <%= flash[:alert] %>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       <% end %>
-
       <div class="card border-0 shadow-lg rounded-4">
         <div class="card-header bg-danger text-white py-3 rounded-top-4">
           <h2 class="mb-0 fs-3">ノート新規作成</h2>
         </div>
         <div class="card-body p-4">
-          <%= form_with model: @note, url: notes_path, method: :post, local: true
-
-
- do |f| %>
+          <%= form_with model: @note, url: notes_path, method: :post, local: true do |f| %>
             <div class="mb-4">
-              <%= f.label :title, "タイトル", class: "form-label fw-bold fs-5 mb-3"
- %>
-              <%= f.text_field :title, class: "form-control form-control-lg rounded-3", required: true
- %>
+              <%= f.label :title, "タイトル", class: "form-label fw-bold fs-5 mb-3" %>
+              <%= f.text_field :title, class: "form-control form-control-lg rounded-3", required: true %>
             </div>
             <div class="mb-4">
-              <%= f.label :body, "本文", class: "form-label fw-bold fs-5 mb-3"
- %>
-              <%= f.text_area :body, class: "form-control form-control-lg rounded-3", rows: 12, style: "background:#f8d7da10;"
- %>
+              <%= f.label :body, "本文", class: "form-label fw-bold fs-5 mb-3" %>
+              <%= f.text_area :body, class: "form-control form-control-lg rounded-3", rows: 12, style: "background:#f8d7da10;" %>
             </div>
             <div class="text-end">
-              <%= f.submit "作成", class: "btn btn-danger px-4 py-2 fw-bold rounded-3"
- %>
+              <%= f.submit "作成", class: "btn btn-danger px-4 py-2 fw-bold rounded-3" %>
             </div>
           <% end %>
         </div>

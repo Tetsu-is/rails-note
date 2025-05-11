@@ -1,0 +1,53 @@
+---
+EnableDefaultLinters: true
+linters:
+  ErbSafety:
+    enabled: true
+  Rubocop:
+    enabled: true
+    rubocop_config:
+      inherit_from:
+        - .rubocop.yml
+      Layout/InitialIndentation:
+        Enabled: true
+      Layout/TrailingEmptyLines:
+        Enabled: true
+      Layout/TrailingWhitespace:
+        Enabled: true
+  SpaceAroundErbTag:
+    enabled: true
+  NoJavascriptTagHelper:
+    enabled: true
+  SelfClosingTag:
+    enabled: true
+  SpaceInHtmlTag:
+    enabled: true
+  HardCodedString:
+    enabled: false
+  AllowedScriptType:
+    enabled: true
+    allowed_types:
+      - "text/javascript"
+      - "module"
+  FinalNewline:
+    enabled: true
+  ExtraNewline:
+    enabled: true
+  ClosingErbTagIndent:
+    enabled: true
+  TrailingWhitespace:
+    enabled: true
+  IndentationWidth:
+    enabled: true
+    indent_width: 2
+  RightTrim:
+    enabled: true
+    enforced_style: "-"
+  SpaceIndentation:
+    enabled: true
+  RequireFilename:
+    enabled: true
+  BlockAlignment:
+    enabled: true
+  NoUnusedDisable:
+    enabled: true

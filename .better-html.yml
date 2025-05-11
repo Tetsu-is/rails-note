@@ -1,0 +1,7 @@
+---
+rules:
+  tag_name_no_error: true
+  no_javascript_tag_helper: true
+  allowed_script_type:
+    - "text/javascript"
+    - "module" 
