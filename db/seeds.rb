@@ -9,27 +9,26 @@
 #   end
 
 # テストユーザーの作成
-user = User.create!(
-  name: 'testuser',
-  password: 'password',
-  password_confirmation: 'password'
-)
+# user = User.create!(
+#   username: 'testuser',
+#   password_digest: ''
+# )
 
-# ユーザーに紐づくノートの作成
-Note.create!([
-  {
-    title: 'はじめてのノート',
-    body: 'これは最初のノートです。自由に編集できます。',
-    user: user
-  },
-  {
-    title: 'Railsメモ',
-    body: 'Railsでアプリを作るときのメモを書きましょう。',
-    user: user
-  },
-  {
-    title: 'やることリスト',
-    body: "・牛乳を買う\n・メールを返信する\n・運動する",
-    user: user
-  }
-])
+# # ユーザーに紐づくノートの作成
+# Note.create!([
+#   {
+#     title: 'はじめてのノート',
+#     body: 'これは最初のノートです。自由に編集できます。',
+#     user: user
+#   },
+#   {
+#     title: 'Railsメモ',
+#     body: 'Railsでアプリを作るときのメモを書きましょう。',
+#     user: user
+#   },
+#   {
+#     title: 'やることリスト',
+#     body: "・牛乳を買う\n・メールを返信する\n・運動する",
+#     user: user
+#   }
+# ])
