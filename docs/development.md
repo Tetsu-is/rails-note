@@ -6,13 +6,13 @@
 
 ### 1. プロジェクト初期設定
 
-- [ ] Rails プロジェクトを作成する
-- [ ] 必要な gem（bootstrap 等）を Gemfile に追加し、bundle install を実行する
-- [ ] Bootstrap のセットアップを行う
+- [x] Rails プロジェクトを作成する
+- [x] 必要な gem（bootstrap 等）を Gemfile に追加し、bundle install を実行する
+- [x] Bootstrap のセットアップを行う
 
 ### 2. モデル・DB 設計
 
-- [ ] Memo モデルを作成する（title:string, body:text, created_at:datetime, updated_at:datetime）
+- [ ] Note モデルを作成する（title:string, body:text, created_at:datetime, updated_at:datetime）
 - [ ] マイグレーションを実行し、DB にテーブルを作成する（sqlite）
 
 ### 3. ルーティング設定
