@@ -1,44 +1,51 @@
 class NotesController < ApplicationController
+  before_action :authenticate_user
+  before_action :set_note, only: [:show, :update, :destroy]
+  before_action :ensure_correct_user, only: [:show, :update, :destroy]
+
   def show
-    @note = Note.find(params[:id])
   end
 
   def update
-    @note = Note.find(params[:id])
-    if @note.update(body: params[:note][:body])
-      flash[:notice] = "ノートを更新しました。"
-      redirect_to note_path(@note)
+    if @note.update(note_params)
+      redirect_to note_path(@note), notice: 'ノートが更新されました'
     else
-      flash.now[:alert] = "更新に失敗しました。"
       render :show, status: :unprocessable_entity
     end
   end
 
   def new
-    @note = Note.new
+    @note = current_user.notes.build
   end
 
   def create
-    @note = Note.new(note_params)
+    @note = current_user.notes.build(note_params)
+
     if @note.save
-      flash[:notice] = "ノートを作成しました。"
-      redirect_to note_path(@note)
+      redirect_to note_path(@note), notice: 'ノートが作成されました'
     else
-      flash.now[:alert] = "作成に失敗しました。"
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @note = Note.find(params[:id])
     @note.destroy
-    flash[:notice] = "ノートを削除しました。"
-    redirect_to root_path
+    redirect_to notes_home_path, notice: 'ノートが削除されました'
   end
 
   private
 
+  def set_note
+    @note = Note.find(params[:id])
+  end
+
   def note_params
     params.require(:note).permit(:title, :body)
+  end
+
+  def ensure_correct_user
+    unless @note.user_id == current_user.id
+      redirect_to notes_home_path, alert: '他のユーザーのノートにはアクセスできません'
+    end
   end
 end

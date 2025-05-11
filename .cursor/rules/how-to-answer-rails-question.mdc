@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 質問に答える際のポイント
+- Ruby on Railsの基礎や仕組みを絡めて説明してください
+- Ruby on Rails独自の振る舞いや組み込み関数については詳しく説明してください

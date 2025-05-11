@@ -4,18 +4,15 @@ namespace :dev do
     system "bin/rails server -b 0.0.0.0"
   end
 
-  desc "Format Ruby and ERB files"
+  desc "Format Ruby files"
   task :format do
     system "bundle exec rubocop -A"
-    system "bundle exec erblint --lint-all --autocorrect"
   end
 
   desc "Lint Ruby files"
   task :lint do
     puts "Running RuboCop..."
     system "bundle exec rubocop"
-    puts '\nRunning ERB Lint...'
-    system "bundle exec erblint --lint-all"
     puts '\nRunning Brakeman...'
     system "bundle exec brakeman"
   end

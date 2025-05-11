@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get "home/index"
+  # Auth routes
+  get 'login', to: 'sessions#new', as: :login
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy', as: :logout
+  get 'signup', to: 'users#new', as: :signup
+  post 'signup', to: 'users#create'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -12,6 +18,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+  get "notes", to: "home#notes", as: :notes_home
 
   get "note/new", to: "notes#new", as: :new_note
   get "note/:id", to: "notes#show", as: :note

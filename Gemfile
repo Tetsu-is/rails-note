@@ -54,11 +54,12 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  
+
   # Code formatting
   gem "htmlbeautifier", "~> 1.4"
   gem "prettier", "~> 4.0"
-  
+  gem "erb_lint"
+
   # IDE support
   gem "solargraph", "~> 0.54.2"
 end

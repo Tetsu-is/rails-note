@@ -1,0 +1,55 @@
+<div class="min-vh-100 d-flex align-items-center justify-content-center bg-light py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card border-0 shadow-lg">
+          <div class="card-body p-5">
+            <div class="text-center mb-5">
+              <h1 class="h2 fw-bold text-danger mb-3">
+                <i class="bi bi-journal-text me-2"></i>Rails Note
+              </h1>
+              <p class="text-muted">アカウントにログイン</p>
+            </div>
+            <%= form_with(url: login_path, local: true, class: "needs-validation") do |f| %>
+              <% if flash[:alert] %>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <i class="bi bi-exclamation-circle me-2"></i><%= flash[:alert] %>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              <% end %>
+              <div class="mb-4">
+                <%= f.label :name, 'ユーザー名', class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-person"></i>
+                  </span>
+                  <%= f.text_field :name, class: "form-control", placeholder: "ユーザー名を入力" %>
+                </div>
+              </div>
+              <div class="mb-4">
+                <%= f.label :password, 'パスワード', class: "form-label" %>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-lock"></i>
+                  </span>
+                  <%= f.password_field :password, class: "form-control", placeholder: "パスワードを入力" %>
+                </div>
+              </div>
+              <div class="d-grid gap-2 mb-4">
+                <%= f.submit 'ログイン', class: "btn btn-danger btn-lg" %>
+              </div>
+              <div class="text-center">
+                <p class="text-muted">
+                  アカウントをお持ちでない方は
+                  <%= link_to 'こちら', signup_path, class: "text-danger text-decoration-none" %>
+                  から新規登録
+                </p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
