@@ -8,14 +8,28 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Note.create!([
-  { title: 'はじめてのノート', body: 'これは最初のノートです。自由に編集できます。' },
-  { title: 'Railsメモ', body: 'Railsでアプリを作るときのメモを書きましょう。' },
-  { title: 'やることリスト', body: "・牛乳を買う\n・メールを返信する\n・運動する" }
-])
-
-User.create!(
+# テストユーザーの作成
+user = User.create!(
   name: 'testuser',
   password: 'password',
   password_confirmation: 'password'
 )
+
+# ユーザーに紐づくノートの作成
+Note.create!([
+  {
+    title: 'はじめてのノート',
+    body: 'これは最初のノートです。自由に編集できます。',
+    user: user
+  },
+  {
+    title: 'Railsメモ',
+    body: 'Railsでアプリを作るときのメモを書きましょう。',
+    user: user
+  },
+  {
+    title: 'やることリスト',
+    body: "・牛乳を買う\n・メールを返信する\n・運動する",
+    user: user
+  }
+])
