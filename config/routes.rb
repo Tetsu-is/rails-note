@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  get 'note/new', to: 'notes#new', as: :new_note
-  get 'note/:id', to: 'notes#show', as: :note
-  patch 'note/:id', to: 'notes#update'
-  post 'note', to: 'notes#create', as: :notes
-  delete 'note/:id', to: 'notes#destroy', as: :delete_note
+  get "note/new", to: "notes#new", as: :new_note
+  get "note/:id", to: "notes#show", as: :note
+  patch "note/:id", to: "notes#update"
+  post "note", to: "notes#create", as: :notes
+  delete "note/:id", to: "notes#destroy", as: :delete_note
 end
