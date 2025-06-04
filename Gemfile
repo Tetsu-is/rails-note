@@ -61,7 +61,7 @@ group :development do
   gem "erb_lint"
 
   # IDE support
-  gem "solargraph", "~> 0.54.2"
+  gem "solargraph", "~> 0.55.0"
 end
 
 group :test do
